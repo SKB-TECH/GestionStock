@@ -9,8 +9,11 @@ const productSchema = Schema(
       maxLength: 50,
       unique: true,
     },
-    descipption: String,
-    stockQuantity: Number,
+    description: String,
+    stockQuantity: {
+      type: Number,
+      default: 0,
+    },
     price: {
       type: Number,
       require: true,
@@ -18,7 +21,7 @@ const productSchema = Schema(
     type: {
       type: String,
       require: true,
-      enum: ["ALIMENTAIRE ", "COSMETIQUE", "ELECTRONIQUE"],
+      enum: ["ALIMENTAIRE", "COSMETIQUE", "ELECTRONIQUE"],
     },
   },
   { timestamps: true }
